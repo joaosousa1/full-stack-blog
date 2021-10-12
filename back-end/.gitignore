@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# logs
+npm-debug.log
+
+package-lock.json
+
+# generate
+dist
+build
+
+#certificate
+certificate/*
+!certificate/criaCert.sh

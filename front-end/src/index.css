@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  font-family: "Roboto";
+  color: rgb(209, 209, 209);
+  box-sizing: border-box;
+  
+}
+
+:root {
+  --cor0: #ffffff;
+  --cor1: #42444a;
+  --cor2: #43b581;
+  --cor3: #7288da;
+  --corNav: #333333;
+  --erros:  #ff5e5e;
+  --radius: 10px;
+  --bor: 0px;
+}
+
+body {
+  background-color: var(--cor1);
+  overflow-y: scroll;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #333333;
+  /* box-shadow: 0px 3px 15px var(--cor3); */
+  border-bottom: 2px solid var(--cor3);
+}
+
+/* navbar content */
+.navbarC { 
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.navbar h1 {
+  color: var(--cor3);
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--cor0);
+  margin-left: 10px;
+  cursor: pointer;
+}
+.navbar a:hover {
+  color: var(--cor3);
+}
+.content {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.login-panel {
+  width: 400px;
+  margin: 40px auto;
+  padding: 50px;
+  background-color: var(--corNav);
+  border-radius: var(--radius);
+}
+
+.login-panel h2{
+  text-align: center;
+  margin: 30px auto;
+}
+
+.login-panel .bt {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* blog previews / list */
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: var(--corNav);
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px var(--cor3);
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: var(--cor3);
+  margin-bottom: 8px;
+}
+.blog-preview a{
+  text-decoration: none;
+}
+
+/* blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: var(--cor3);
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 10px 0;
+}
+
+/* create new blog form */
+.create {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: var(--cor3);
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.bt-nav {
+  display: inline;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--cor3);
+  padding: 8px;
+  color: var(--cor0);
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  margin-left: 10px;
+  border: 1px solid var(--cor3);    
+}
+
+.bt-separa {
+  margin: 0 5px 0 5px;
+}
+
+.bt-nav:hover {
+  background: var(--erros);
+  border: 1px solid var(--erros);
+  color: var(--cor0) !important;
+}
+
+.bt {
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--cor3);
+  padding: 8px;
+  margin: 0 3px;
+  color: var(--cor0);
+  border-radius: var(--radius);
+  border: 1px solid var(--cor3);
+  transition: all 0.3s;
+}
+
+.bt:disabled {
+  cursor: not-allowed;
+}
+
+.bt-modal {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.bt:hover {
+  background: var(--erros);
+  border: 1px solid var(--erros);
+  color: var(--cor0) !important;
+}
+
+.paginationBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+input, textarea, select{
+  background-color: rgb(145, 145, 145);
+  color: #333;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: var(--radius);
+}
+
+textarea {
+  resize: vertical;
+  height: 500px;
+}
+
+:focus {
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.bt-nav:focus,
+.bt:focus {
+  border: solid 1px var(--cor2);
+}
+
+.erros {
+  margin-top: 30px;
+  background-color: var(--erros);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.loading {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.loader {
+  border: 16px solid #ffffff00;
+  border-radius: 50%;
+  border-top: 16px solid var(--cor3);
+  border-bottom: 16px solid var(--cor3);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: 0 auto 0 auto;
+}
+
+.modal {
+  position: fixed;
+  width: 500px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px 90px;
+  background-color: var(--corNav);
+  border-radius: var(--radius);
+}
+
+/* tag vazia do modal com altura */
+.modal p {
+  min-height: 20px; 
+}
+
+.modalBg {
+  background-color: rgba(0, 0, 0, 0.670);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.not-found p {
+margin: 10px 30px 30px 0;
+}
+
+.not-found .bt {
+  margin: 0;
+}
+
+.linha {
+  display: flex;
+  margin: 0;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
