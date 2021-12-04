@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom"
 import { url } from "./Url"
-import {Context} from './Store'
+import { Context } from './UserContext'
  
 
 const Login = () => {

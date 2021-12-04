@@ -1,18 +1,29 @@
-import { useContext } from 'react';
-import { Context } from './Store'
+import { useContext} from 'react';
+import { Context } from './UserContext'
 
-function Modal() {
+function Modal() { 
 
     const [state, setState] = useContext(Context);
 
-    const closeModal = () => {
-        const m = { modalOpened: false, modalTitle: "", modalTexto: [] }
+    const handleCancel = () => {
+        const m = { modalOpened: false }
         setState({ type: 'SET_MODAL', payload: m });
 
-        //todo criar botoes aceitar cancelar confirmar
-        if (state.modalBtTexto === "Aceitar Cookies") {
-            localStorage.setItem("FrstOK", true);
+        if ( typeof state.modalActionCancel === "function" ){
+        	state.modalActionCancel()
         }
+
+    }
+
+    const handleOk = () => {
+        const m = { modalOpened: false }
+        setState({ type: 'SET_MODAL', payload: m });
+        //var m = { modalOk: true, modalCallBack: () => console.log("teste")}
+        //m.modalCallBack()
+        if ( typeof state.modalActionOk === "function" ){
+        	state.modalActionOk()
+        }
+
     }
 
     const modalSyle = () => {
@@ -24,15 +35,24 @@ function Modal() {
             <div className="modalBg" style={modalSyle()}></div>
             <div className="modal" style={modalSyle()}>
 
-                <h2>{state.modalTitle}</h2>
+                <h2>{state.modalTitulo}</h2>
                 <div style={{ marginTop: "20px" }}>
 
-                    {state.modalTexto.map(l => (
-                        <p>{l}</p>
+                    {state.modalTexto.map((l, i) => (
+                        <p key={i} >{l}</p> //cada linha tem um id para o react não mostrar erro na consola
                     ))}
 
                 </div>
-                <button className="bt bt-modal" onClick={closeModal}>{state.modalBtTexto}</button>
+                <div className="linha bt-modal">
+
+                    { state.modalBtTextoCancel !== undefined &&
+                    <button className="bt" onClick={() => handleCancel()}>{state.modalBtTextoCancel}</button>
+                    }
+
+                
+                    <button className="bt" onClick={() => handleOk()}>{state.modalBtTextoOk}</button>
+
+                </div>
 
             </div>
         </>

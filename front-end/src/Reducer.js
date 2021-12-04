@@ -2,23 +2,26 @@
 const Reducer = (state, action) => {
     switch (action.type) {
         case 'SET_LOGIN':
-            //console.log(state)
+
             return {
                 ...state,
                 isLogin: action.payload.isLogin,
                 userName: action.payload.userName
             };
         case 'SET_MODAL':
-            //console.log(state)
+
             return {
                 ...state,
-                modalOpened: action.payload.modalOpened,
-                modalTitle: action.payload.modalTitulo || "Mensagem", 
+                modalOpened: action.payload.modalOpened || false,
+                modalTitulo: action.payload.modalTitulo || "Mensagem", 
                 modalTexto: action.payload.modalTexto || [],
-                modalBtTexto: action.payload.modalBtTexto || "Fechar"
+                modalBtTextoCancel: action.payload.modalBtTextoCancel || undefined,
+                modalBtTextoOk: action.payload.modalBtTextoOk || "Ok",
+                modalActionCancel: action.payload.modalActionCancel || undefined,
+                modalActionOk: action.payload.modalActionOk || undefined
             };
         case 'SET_PAGE':
-            //console.log(state)
+
             return {
                 ...state,
                 lastPage: action.payload.lastPage

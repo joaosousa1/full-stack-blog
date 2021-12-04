@@ -8,12 +8,12 @@ import NotFound from './NotFound';
 import Login from './Login';
 import Registrar from './Registrar';
 import Modal from './Modal';
-import Store from './Store'; //global state
+import UserContext from './UserContext'; //global state
 
 function App() {
 
   return (
-        <Store>
+        <UserContext>
           <Router>
             <div className="App">
               <Navbar />
@@ -45,7 +45,7 @@ function App() {
               </div>
             </div>
           </Router>
-        </Store>
+        </UserContext>
   );
 
 }

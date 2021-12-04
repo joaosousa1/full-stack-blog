@@ -7,8 +7,9 @@ npm-debug.log
 package-lock.json
 
 # generate
-dist
-build
+/dist
+/build
+/public
 
 #certificate
 certificate/*

@@ -2,7 +2,7 @@ import BlogList from "./BlogList";
 import { useState, useEffect } from 'react';
 import { url } from "./Url";
 import { useContext } from 'react';
-import { Context } from './Store'
+import { Context } from './UserContext'
 //import { useParams } from "react-router-dom";
 
 
@@ -55,15 +55,15 @@ const Home = () => {
     setState({ type: 'SET_PAGE', payload: { lastPage: pageNumber } });
 
     const msg = [
-      "Bla Bla Bla cookies.",
+      "Este site utiliza cookies.",
       " ",
       "Politica de privacidade e termos de utilização.",
       " ",
       "Ao clicar em \"Aceitar\" está a aceitar os termos e condições, e consente o uso dos cookies."
     ];
 
-
-    if (localStorage.getItem("FrstOK") === null) {
+    // Cokieeeeeeeeeeeeeeeeees... nhan nhan :P
+    if (localStorage.getItem("CookiesOK") === null) {
       setTimeout(() => {
         setState({
           type: 'SET_MODAL',
@@ -71,7 +71,8 @@ const Home = () => {
             modalOpened: true,
             modalTitulo: "Cookies",
             modalTexto: msg,
-            modalBtTexto: "Aceitar Cookies"
+            modalBtTextoOk: "Aceitar Cookies",
+            modalActionOk: () => localStorage.setItem("CookiesOK", true)
           }
         });
 

@@ -290,6 +290,10 @@ margin: 10px 30px 30px 0;
   margin: 0;
 }
 
+.importante {
+  color: #ff5e5e;
+}
+
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }

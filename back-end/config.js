@@ -1,6 +1,6 @@
 module.exports = {
 
-    'secret': 'ilovesjoaosousa',
+    'secret': 'lamePassword',
     'useHttps': false, //if true dont forget to add certficates in folder certificate.
     'database': 'mongodb://localhost:27017/blog',
     'registar': false, //enable new users regist

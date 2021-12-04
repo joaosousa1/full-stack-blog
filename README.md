@@ -33,9 +33,9 @@ cd front-end
 
 npm run build
 
-## Copiar o conteúdo da pasta front-end/buid (opcional pode alojar static files em outro servidor)
+## Copiar o conteúdo da pasta front-end/build (opcional pode alojar static files em outro servidor)
 
-cp build ../back-end/public
+cp -r build/* ../back-end/public/
 
 ## Iniciar Back-end
 

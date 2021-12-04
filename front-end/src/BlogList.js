@@ -7,8 +7,8 @@ const BlogList = ({ blogs }) => {
         <div className="blog-preview" key={blog._id} >
           <Link to={`/post/${blog._id}`}>
             <h2>{ blog.title }</h2>
+            <small>id { blog._id }</small>
             <p>Autor: { blog.author }</p>
-            <p>id { blog._id }</p>
           </Link>
         </div>
       ))}
