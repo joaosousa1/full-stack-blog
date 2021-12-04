@@ -65,8 +65,6 @@ const Info = () => {
       <p style={{wordBreak: "break-all"}} >modal titulo: <span className="importante">{JSON.stringify(state.modalTitulo)}</span></p>
       <p style={{wordBreak: "break-all"}} >modal bt ok texto: <span className="importante">{JSON.stringify(state.modalBtTextoOk)}</span></p>
       <p style={{wordBreak: "break-all"}} >modal bt cancel texto: <span className="importante">{JSON.stringify(state.modalBtTextoCancel)}</span></p>
-      <p style={{wordBreak: "break-all"}} >modal bt cancel action: <span className="importante">{JSON.stringify(state.modalActionCancel)}</span></p>
-      <p style={{wordBreak: "break-all"}} >modal bt ok action: <span className="importante">{JSON.stringify(state.modalActionOk)}</span></p>
       <p style={{wordBreak: "break-all"}} >última pasta: <span className="importante">{JSON.stringify(state.lastPage)}</span></p>
       <br />
       <br />
